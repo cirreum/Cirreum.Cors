@@ -218,34 +218,8 @@ The library provides clear error messages for common configuration issues:
 
 ## Contributing
 
-This library is part of the Cirreum Foundation project. Please refer to the main project's contributing guidelines.
-
-## License
-
-
-## Changelog
-
-### v1.0
-
-- Current stable version
-- Versioning follows the Cirreum Framework SemVer version
+This package is part of the Cirreum ecosystem. Follow the established patterns when contributing new features or provider implementations.
 
 ---
 
 For more information about CORS in ASP.NET Core, see the [official Microsoft documentation](https://docs.microsoft.com/en-us/aspnet/core/security/cors).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
