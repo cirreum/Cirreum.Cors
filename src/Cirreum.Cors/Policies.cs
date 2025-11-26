@@ -1,4 +1,4 @@
-﻿namespace Cerrium.Cors;
+﻿namespace Cirreum.Cors;
 
 public static class Policies {
 

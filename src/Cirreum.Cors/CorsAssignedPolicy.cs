@@ -1,4 +1,4 @@
-﻿namespace Cerrium.Cors;
+﻿namespace Cirreum.Cors;
 
 /// <summary>
 /// Contains the actively configured CORS Policy Name.

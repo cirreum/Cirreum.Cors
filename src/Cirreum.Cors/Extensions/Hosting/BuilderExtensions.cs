@@ -1,6 +1,6 @@
 ﻿namespace Microsoft.AspNetCore.Hosting;
 
-using Cerrium.Cors;
+using Cirreum.Cors;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.Extensions.Configuration;
@@ -11,10 +11,10 @@ using System.Text.Json;
 
 public static class BuilderExtensions {
 
-	private const string CorsConfigurationKey = "Cerrium:Cors";
+	private const string CorsConfigurationKey = "Cirreum:Cors";
 
 	// Hardcoded header we want to ensure is allowed
-	private const string RequiredHeader = "X-Cerrium-App-Name";
+	private const string RequiredHeader = "X-Cirreum-App-Name";
 
 	/// <summary>
 	/// Adds CORS configuration from the host application builder.
@@ -24,13 +24,13 @@ public static class BuilderExtensions {
 	/// <returns>The host application builder for chaining.</returns>
 	/// <remarks>
 	/// <para>
-	/// Configure in appsettings.json under "Cerrium:Cors" section as a dictionary of named policies.
+	/// Configure in appsettings.json under "Cirreum:Cors" section as a dictionary of named policies.
 	/// </para>
 	/// <para>
 	/// Example configuration:
 	/// <code>
 	/// {
-	///   "Cerrium": {
+	///   "Cirreum": {
 	///     "Cors": {
 	///       "default": {
 	///         "origins": ["https://*.mycompany.com", "https://app.mycompany.com"],
@@ -85,7 +85,7 @@ public static class BuilderExtensions {
 			throw new InvalidOperationException("No CORS policy named 'Default' found in configuration and is required.");
 		}
 
-		var envAllowedClients = Environment.GetEnvironmentVariable("Cerrium_CORS_ALLOWEDCLIENTS");
+		var envAllowedClients = Environment.GetEnvironmentVariable("Cirreum_CORS_ALLOWEDCLIENTS");
 		if (!string.IsNullOrWhiteSpace(envAllowedClients)) {
 			// Split by comma or semicolon to support multiple origins
 			var origins = envAllowedClients.Split([',', ';'], StringSplitOptions.RemoveEmptyEntries)
@@ -107,7 +107,7 @@ public static class BuilderExtensions {
 					// Replace or append origins based on your needs
 					targetPolicy.Origins = origins; // Replace existing origins
 #if DEBUG
-					Console.WriteLine($"Updated CORS policy '{targetPolicyKey}' origins from Cerrium_CORS_ALLOWEDCLIENTS environment variable");
+					Console.WriteLine($"Updated CORS policy '{targetPolicyKey}' origins from Cirreum_CORS_ALLOWEDCLIENTS environment variable");
 #endif
 				}
 			}

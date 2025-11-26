@@ -1,16 +1,16 @@
-﻿namespace Cerrium.Cors;
+﻿namespace Cirreum.Cors;
 /// <summary>
 /// Configuration for CORS (Cross-Origin Resource Sharing) policies.
 /// </summary>
 /// <remarks>
 /// <para>
-/// Configure in appsettings.json under "Cerrium:Cors" section as a dictionary of named policies.
+/// Configure in appsettings.json under "Cirreum:Cors" section as a dictionary of named policies.
 /// </para>
 /// <para>
 /// Example configuration:
 /// <code>
 /// {
-///   "Cerrium": {
+///   "Cirreum": {
 ///     "Cors": {
 ///       "default": {
 ///         "origins": ["https://*.mycompany.com", "https://app.mycompany.com"],
