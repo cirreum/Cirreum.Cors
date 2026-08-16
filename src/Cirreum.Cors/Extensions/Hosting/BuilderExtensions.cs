@@ -13,7 +13,17 @@ public static class BuilderExtensions {
 
 	private const string CorsConfigurationKey = "Cirreum:Cors";
 
-	// Hardcoded header we want to ensure is allowed
+	// The app-name header every Cirreum remote client sends; always added to a policy's allowed
+	// headers so a browser preflight can never strip it.
+	//
+	// Deliberately a literal rather than a reference to the canonical
+	// RemoteIdentityConstants.AppNameHeader: that constant lives in Cirreum.Contracts, a
+	// same-layer sibling, and this package takes no Cirreum dependency at all. Both constraints
+	// forbid the reference; the duplication is the cost of keeping this package standalone.
+	//
+	// The two must stay in step. If the header name ever changes, it changes in both places —
+	// a divergence fails silently, because CORS would simply stop allowing a header the client
+	// still sends, and the app name would go missing server-side with no error anywhere.
 	private const string RequiredHeader = "X-Cirreum-App-Name";
 
 	/// <summary>
